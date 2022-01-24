@@ -10,7 +10,7 @@ services:
     volumes:
       - /app/node_modules
       - .:/app
-      - ./aws:/root/.aws/
+      - ~/.aws:/root/.aws/
     environment:
       - CHOKIDAR_USEPOLLING=true
     tty: true
