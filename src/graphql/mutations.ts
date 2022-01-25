@@ -2,6 +2,75 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const createBlog = /* GraphQL */ `
+  mutation CreateBlog(
+    $input: CreateBlogInput!
+    $condition: ModelBlogConditionInput
+  ) {
+    createBlog(input: $input, condition: $condition) {
+      id
+      name
+      posts {
+        items {
+          id
+          title
+          createdAt
+          updatedAt
+          blogPostsId
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateBlog = /* GraphQL */ `
+  mutation UpdateBlog(
+    $input: UpdateBlogInput!
+    $condition: ModelBlogConditionInput
+  ) {
+    updateBlog(input: $input, condition: $condition) {
+      id
+      name
+      posts {
+        items {
+          id
+          title
+          createdAt
+          updatedAt
+          blogPostsId
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteBlog = /* GraphQL */ `
+  mutation DeleteBlog(
+    $input: DeleteBlogInput!
+    $condition: ModelBlogConditionInput
+  ) {
+    deleteBlog(input: $input, condition: $condition) {
+      id
+      name
+      posts {
+        items {
+          id
+          title
+          createdAt
+          updatedAt
+          blogPostsId
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
 export const createPost = /* GraphQL */ `
   mutation CreatePost(
     $input: CreatePostInput!
@@ -10,20 +79,28 @@ export const createPost = /* GraphQL */ `
     createPost(input: $input, condition: $condition) {
       id
       title
-      rating
-      status
+      blog {
+        id
+        name
+        posts {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
       comments {
         items {
           id
-          postID
           content
           createdAt
           updatedAt
+          postCommentsId
         }
         nextToken
       }
       createdAt
       updatedAt
+      blogPostsId
     }
   }
 `;
@@ -35,20 +112,28 @@ export const updatePost = /* GraphQL */ `
     updatePost(input: $input, condition: $condition) {
       id
       title
-      rating
-      status
+      blog {
+        id
+        name
+        posts {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
       comments {
         items {
           id
-          postID
           content
           createdAt
           updatedAt
+          postCommentsId
         }
         nextToken
       }
       createdAt
       updatedAt
+      blogPostsId
     }
   }
 `;
@@ -60,20 +145,28 @@ export const deletePost = /* GraphQL */ `
     deletePost(input: $input, condition: $condition) {
       id
       title
-      rating
-      status
+      blog {
+        id
+        name
+        posts {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
       comments {
         items {
           id
-          postID
           content
           createdAt
           updatedAt
+          postCommentsId
         }
         nextToken
       }
       createdAt
       updatedAt
+      blogPostsId
     }
   }
 `;
@@ -84,21 +177,26 @@ export const createComment = /* GraphQL */ `
   ) {
     createComment(input: $input, condition: $condition) {
       id
-      postID
       post {
         id
         title
-        rating
-        status
+        blog {
+          id
+          name
+          createdAt
+          updatedAt
+        }
         comments {
           nextToken
         }
         createdAt
         updatedAt
+        blogPostsId
       }
       content
       createdAt
       updatedAt
+      postCommentsId
     }
   }
 `;
@@ -109,21 +207,26 @@ export const updateComment = /* GraphQL */ `
   ) {
     updateComment(input: $input, condition: $condition) {
       id
-      postID
       post {
         id
         title
-        rating
-        status
+        blog {
+          id
+          name
+          createdAt
+          updatedAt
+        }
         comments {
           nextToken
         }
         createdAt
         updatedAt
+        blogPostsId
       }
       content
       createdAt
       updatedAt
+      postCommentsId
     }
   }
 `;
@@ -134,21 +237,26 @@ export const deleteComment = /* GraphQL */ `
   ) {
     deleteComment(input: $input, condition: $condition) {
       id
-      postID
       post {
         id
         title
-        rating
-        status
+        blog {
+          id
+          name
+          createdAt
+          updatedAt
+        }
         comments {
           nextToken
         }
         createdAt
         updatedAt
+        blogPostsId
       }
       content
       createdAt
       updatedAt
+      postCommentsId
     }
   }
 `;
