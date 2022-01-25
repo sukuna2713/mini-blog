@@ -1,15 +1,14 @@
 {
   "version": "1",
   "cognitoConfig": {
-    "resourceNameTruncated": "minibld2204499",
-    "userPoolName": "miniBlogUserPool",
+    "resourceNameTruncated": "minibl9934cf15",
+    "userPoolName": "miniblog-userpool",
     "autoVerifiedAttributes": [
       "email"
     ],
-    "mfaConfiguration": "OPTIONAL",
+    "mfaConfiguration": "OFF",
     "mfaTypes": [
-      "SMS Text Message",
-      "TOTP"
+      "SMS Text Message"
     ],
     "smsAuthenticationMessage": "Your authentication code is {####}",
     "smsVerificationMessage": "Your verification code is {####}",
@@ -30,26 +29,26 @@
     "userpoolClientReadAttributes": [
       "email"
     ],
-    "userpoolClientLambdaRole": "minibld2204499_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "minibl9934cf15_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "d2204499",
-    "resourceName": "miniblogAuth",
+    "sharedId": "9934cf15",
+    "resourceName": "miniblog9934cf159934cf15",
     "authSelections": "userPoolOnly",
     "useDefault": "manual",
-    "userPoolGroups": true,
-    "adminQueries": true,
+    "usernameAttributes": [
+      "email"
+    ],
+    "userPoolGroups": false,
+    "adminQueries": false,
     "triggers": {},
     "hostedUI": true,
-    "hostedUIDomainName": "miniblogd2204499-d2204499",
+    "hostedUIDomainName": "miniblog9934cf15-9934cf15",
     "authProvidersUserPool": [
       "Google"
     ],
     "hostedUIProviderMeta": "[{\"ProviderName\":\"Google\",\"authorize_scopes\":\"openid email profile\",\"AttributeMapping\":{\"email\":\"email\",\"username\":\"sub\"}}]",
     "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"http://localhost:3000/\"],\"LogoutURLs\":[\"http://localhost:3000/\"]}",
-    "userPoolGroupList": [
-      "userpool"
-    ],
-    "adminQueryGroup": "userpool",
+    "userPoolGroupList": [],
     "serviceName": "Cognito",
     "usernameCaseSensitive": false,
     "useEnabledMfas": true

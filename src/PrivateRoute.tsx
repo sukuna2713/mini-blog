@@ -13,12 +13,10 @@ export const PrivateRoute: React.FC<Props> = (props) => {
     return (
         //ログインしているときは子コンポーネント、していないときはサインイン画面を表示
         auth.isAuthenticated ? (
-            <Route path={props.path} element={props.children} />
+            <div>{props.children}</div>
         ) : (
             //サインイン画面にリダイレクトして、ログイン後元の画面に戻す
-            <Route path={props.path} element={
-                <Navigate to='/signin' state={{ from: location }} replace />
-            } />
+            <Navigate to='/signin' state={{ from: location }} replace />
         )
     )
 }

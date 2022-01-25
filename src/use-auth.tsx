@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useContext, createContext } from 'react';
 import { Auth } from 'aws-amplify';
-import { setegid } from 'process';
 
 /**
  * 認証画面に必要な要素のインターフェイス

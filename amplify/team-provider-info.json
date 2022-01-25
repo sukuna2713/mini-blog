@@ -13,13 +13,7 @@
     },
     "categories": {
       "auth": {
-        "miniblogAuth": {}
-      },
-      "function": {
-        "AdminQueries0a1d418f": {
-          "deploymentBucketName": "amplify-miniblog-dev-110329-deployment",
-          "s3Key": "amplify-builds/AdminQueries0a1d418f-316f553942342b323472-build.zip"
-        }
+        "miniblog9934cf159934cf15": {}
       }
     }
   }

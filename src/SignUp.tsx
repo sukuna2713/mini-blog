@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useAuth } from "./use-auth";
 import { Avatar } from "@mui/material";
 import { Button } from "@mui/material";
@@ -10,23 +10,9 @@ import { Grid } from "@mui/material";
 import { Box } from "@mui/material";
 import { LockOutlined } from "@mui/icons-material";
 import { Typography } from "@mui/material";
-import { makeStyles } from "@mui/material";
 import { styled } from "@mui/material";
 import { Container } from "@mui/material";
-
-const Copyright = () => {
-    return (
-        <Typography variant="body2" color="textSecondary" align="center">
-            {'Copyright ©'}
-            <Link color="inherit" href="https://material-ui.com/">
-                my Website
-            </Link>
-            {" "}
-            {new Date().getFullYear()}
-            {"."}
-        </Typography>
-    )
-}
+import { Copyright } from "./Copyright";
 
 /**
  * スタイル適用済のコンポーネント達

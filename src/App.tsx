@@ -1,29 +1,62 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Amplify, { Auth } from 'aws-amplify';
-import awsconfig from './aws-exports';
-Amplify.configure(awsconfig);
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { PrivateRoute } from './PrivateRoute';
+import { useAuth } from './use-auth';
+import { SignUp } from './SignUp';
+import { SignIn } from './SignIn';
+import { SignOut } from './SignOut';
+
+const TopPage = () => {
+  return (
+    <div>
+      <p>トップページ</p>
+      <p>
+        <Link to="/signup">新規登録</Link>
+      </p>
+      <p>
+        <Link to="/signin">ログイン</Link>
+      </p>
+      <p>
+        <Link to="/mypage">マイページ</Link>
+      </p>
+    </div>
+  )
+}
+
+const MyPage = () => {
+  return (
+    <div>
+      <p>マイページ</p>
+      <SignOut />
+    </div>
+  )
+}
+
+const NotFoundPage = () => {
+  return (
+    <div>
+      <p>Page Not Found</p>
+    </div>
+  )
+}
 
 const App = () => {
+  const auth = useAuth()
+  if (auth.isLoading) {
+    //認証の確認中
+    return <div></div>
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<TopPage />} />
+        <Route path='/signup' element={<SignUp />} />
+        <Route path='/signin' element={<SignIn />} />
+        <Route path='/mypage' element={<PrivateRoute path='/mypage'><MyPage /></PrivateRoute>} />
+        <Route path='/*' element={<NotFoundPage />} />
+      </Routes>
+    </BrowserRouter>
+  )
 }
 
 export default App;
