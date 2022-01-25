@@ -4,7 +4,7 @@ import { PrivateRoute } from './PrivateRoute';
 import { useAuth } from './use-auth';
 import { SignUp } from './SignUp';
 import { SignIn } from './SignIn';
-import { SignOut } from './SignOut';
+import { MyPage } from './MyPage';
 
 const TopPage = () => {
   return (
@@ -19,15 +19,6 @@ const TopPage = () => {
       <p>
         <Link to="/mypage">マイページ</Link>
       </p>
-    </div>
-  )
-}
-
-const MyPage = () => {
-  return (
-    <div>
-      <p>マイページ</p>
-      <SignOut />
     </div>
   )
 }

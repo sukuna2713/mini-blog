@@ -1,38 +1,18 @@
 import { ModelInit, MutableModel, PersistentModelConstructor } from "@aws-amplify/datastore";
 
-export enum PostStatus {
-  ACTIVE = "ACTIVE",
-  INACTIVE = "INACTIVE"
-}
 
 
 
-type PostMetaData = {
+
+type ChatMessageMetaData = {
   readOnlyFields: 'createdAt' | 'updatedAt';
 }
 
-type CommentMetaData = {
-  readOnlyFields: 'createdAt' | 'updatedAt';
-}
-
-export declare class Post {
+export declare class ChatMessage {
   readonly id: string;
-  readonly title: string;
-  readonly rating: number;
-  readonly status: PostStatus | keyof typeof PostStatus;
-  readonly comments?: (Comment | null)[];
+  readonly message: string;
   readonly createdAt?: string;
   readonly updatedAt?: string;
-  constructor(init: ModelInit<Post, PostMetaData>);
-  static copyOf(source: Post, mutator: (draft: MutableModel<Post, PostMetaData>) => MutableModel<Post, PostMetaData> | void): Post;
-}
-
-export declare class Comment {
-  readonly id: string;
-  readonly post: Post;
-  readonly content: string;
-  readonly createdAt?: string;
-  readonly updatedAt?: string;
-  constructor(init: ModelInit<Comment, CommentMetaData>);
-  static copyOf(source: Comment, mutator: (draft: MutableModel<Comment, CommentMetaData>) => MutableModel<Comment, CommentMetaData> | void): Comment;
+  constructor(init: ModelInit<ChatMessage, ChatMessageMetaData>);
+  static copyOf(source: ChatMessage, mutator: (draft: MutableModel<ChatMessage, ChatMessageMetaData>) => MutableModel<ChatMessage, ChatMessageMetaData> | void): ChatMessage;
 }

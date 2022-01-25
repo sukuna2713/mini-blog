@@ -1,3 +1,4 @@
+import { Button } from "@mui/material"
 import { useNavigate } from "react-router-dom"
 import { useAuth } from "./use-auth"
 
@@ -12,5 +13,5 @@ export const SignOut = () => {
             }
         })
     }
-    return <button onClick={handleClick}>サインアウト</button>
+    return <Button variant='contained' color='inherit' onClick={handleClick}>サインアウト</Button>
 }
